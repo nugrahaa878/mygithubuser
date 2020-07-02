@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activity.DetailUserActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_user_photo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        tools:src="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/tv_name_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_name"
+        android:textAlignment="center"
+        android:textColor="@color/colorHeader"
+        android:textSize="16sp"
+        android:layout_below="@id/img_user_photo"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_username_title"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name_detail"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/username_title"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_username_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_username_title"
+        android:layout_alignBottom="@+id/tv_username_title"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_vertical"
+        android:layout_toEndOf="@id/tv_username_title"
+        android:text="@string/dummy_username"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_company_title"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_username_title"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/company_title"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_company_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_company_title"
+        android:layout_alignBottom="@+id/tv_company_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/tv_company_title"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_company"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_location_title"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_company_title"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/location_title"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_location_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_location_title"
+        android:layout_alignBottom="@+id/tv_location_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/tv_location_title"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_location"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_repository_title"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_location_title"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/repository_title"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_repository_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_repository_title"
+        android:layout_alignBottom="@+id/tv_repository_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/tv_repository_title"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_repo"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_follower_title"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_repository_title"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/follower_title"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_follower_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_follower_title"
+        android:layout_alignBottom="@+id/tv_follower_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/tv_follower_title"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_follower"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_following_title"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_follower_title"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/following_title"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_following_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_following_title"
+        android:layout_alignBottom="@+id/tv_following_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/tv_following_title"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_follower"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_github"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_following_detail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#DCDBDB"
+        android:text="@string/go_to_github" />
+
+
+</RelativeLayout>

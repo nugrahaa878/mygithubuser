@@ -59,11 +59,11 @@ class DetailUserActivity : AppCompatActivity() {
         tvFollower.text = person.follower
         tvFollowing.text = person.following
 
-        btnGithub.setOnClickListener{
-            val linkGithub = person.link
-            val githubIntent = Intent(Intent.ACTION_VIEW, Uri.parse(linkGithub))
-            startActivity(githubIntent)
-        }
+//        btnGithub.setOnClickListener{
+//            val linkGithub = person.link
+//            val githubIntent = Intent(Intent.ACTION_VIEW, Uri.parse(linkGithub))
+//            startActivity(githubIntent)
+//        }
     }
 
     private fun prepare() {

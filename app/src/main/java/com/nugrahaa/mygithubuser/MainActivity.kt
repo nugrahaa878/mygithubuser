@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nugrahaa.mygithubuser.adapter.ListUserAdapter
 import com.nugrahaa.mygithubuser.model.GithubUser
+import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -53,11 +54,15 @@ class MainActivity : AppCompatActivity() {
                     dataCompany[position],
                     dataRepository[position],
                     dataFollower[position],
-                    dataFollowing[position],
-                    dataLink[position]
+                    dataFollowing[position]
                 )
             githubUsers.add(user)
         }
+    }
+
+    private fun addItemApi() {
+        val client = ApiConfig.getApiService().getListByName("ariangga")
+
     }
 
     private fun prepare() {

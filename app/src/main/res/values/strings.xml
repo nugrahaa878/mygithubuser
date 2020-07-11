@@ -16,6 +16,7 @@
     <string name="follower_title">Follower</string>
     <string name="following_title">Following</string>
     <string name="go_to_github">Go to Github</string>
+    <string name="search">search</string>
 
     <string-array name="username">
         <item>JakeWharton</item>

@@ -3,27 +3,29 @@ package com.nugrahaa.mygithubuser
 import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nugrahaa.mygithubuser.adapter.ListUserAdapter
 import com.nugrahaa.mygithubuser.model.GithubUser
+import com.nugrahaa.mygithubuser.model.ResponseUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var rvGithubUser: RecyclerView
-    private lateinit var dataName: Array<String>
-    private lateinit var dataUsername: Array<String>
-    private lateinit var dataLocation: Array<String>
-    private lateinit var dataCompany: Array<String>
-    private lateinit var dataRepository: Array<String>
-    private lateinit var dataFollower: Array<String>
-    private lateinit var dataFollowing: Array<String>
-    private lateinit var dataLink: Array<String>
-    private lateinit var dataAvatar: TypedArray
+    companion object {
+        private const val TAG = "MainActivity"
+    }
 
+    private lateinit var rvGithubUser: RecyclerView
     private var githubUsers = arrayListOf<GithubUser>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,9 +35,7 @@ class MainActivity : AppCompatActivity() {
         rvGithubUser = rv_user
         rvGithubUser.setHasFixedSize(true)
 
-        prepare()
-        addItem()
-        showRecyclerList()
+        addItemApi()
     }
 
     private fun showRecyclerList() {
@@ -44,37 +44,29 @@ class MainActivity : AppCompatActivity() {
         rvGithubUser.adapter = listUserAdapter
     }
 
-    private fun addItem() {
-        for (position in dataName.indices) {
-                val user = GithubUser(
-                    dataUsername[position],
-                    dataName[position],
-                    dataAvatar.getResourceId(position, -1),
-                    dataLocation[position],
-                    dataCompany[position],
-                    dataRepository[position],
-                    dataFollower[position],
-                    dataFollowing[position]
-                )
-            githubUsers.add(user)
-        }
-    }
-
     private fun addItemApi() {
-        val client = ApiConfig.getApiService().getListByName("ariangga")
+        val client = ApiConfig.getApiService().getListByName("nugrahaa")
+        progressBar.visibility = View.VISIBLE
+        client.enqueue(object : Callback<ResponseUser> {
+            override fun onFailure(call: Call<ResponseUser>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "Gagal gan " + t.message, Toast.LENGTH_SHORT).show()
+                t.printStackTrace()
+            }
 
-    }
-
-    private fun prepare() {
-        dataName = resources.getStringArray(R.array.name)
-        dataUsername = resources.getStringArray(R.array.username)
-        dataLocation = resources.getStringArray(R.array.location)
-        dataAvatar = resources.obtainTypedArray(R.array.avatar)
-        dataCompany = resources.getStringArray(R.array.company)
-        dataRepository = resources.getStringArray(R.array.repository)
-        dataFollower = resources.getStringArray(R.array.followers)
-        dataFollowing = resources.getStringArray(R.array.following)
-        dataLink = resources.getStringArray(R.array.link)
+            override fun onResponse(call: Call<ResponseUser>, response: Response<ResponseUser>) {
+                try {
+                    val dataArray = response.body()?.items as ArrayList<GithubUser>
+                    for (data in dataArray) {
+                        githubUsers.add(data)
+                    }
+                    progressBar.visibility = View.INVISIBLE
+                    showRecyclerList()
+                } catch (e: Exception) {
+                    Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                }
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

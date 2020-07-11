@@ -1,6 +1,7 @@
 package com.nugrahaa.mygithubuser.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,10 @@ import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.item_row_user.view.*
 
 class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerView.Adapter<ListUserAdapter.ListViewHolder>() {
+
+    companion object {
+        private const val TAG = "ListUserAdapter"
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_user, parent, false)
@@ -35,7 +40,7 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
             .into(holder.imgPhoto)
 
         holder.tvLocation.text = user.location
-        holder.tvName.text = user.name
+        holder.tvName.text = user.username
         holder.tvUsername.text = user.username
 
         val mContext =holder.itemView.context

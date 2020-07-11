@@ -53,11 +53,11 @@ class DetailUserActivity : AppCompatActivity() {
             .into(imgPhoto)
         tvName.text = person.name
         tvUsername.text = person.username
-        tvCompany.text = person.company
-        tvLocation.text = person.location
-        tvRepository.text = person.repository
-        tvFollower.text = person.follower
-        tvFollowing.text = person.following
+//        tvCompany.text = person.company
+//        tvLocation.text = person.location
+//        tvRepository.text = person.repository
+//        tvFollower.text = person.follower
+//        tvFollowing.text = person.following
 
 //        btnGithub.setOnClickListener{
 //            val linkGithub = person.link

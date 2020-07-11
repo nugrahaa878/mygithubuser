@@ -13,7 +13,7 @@ data class GithubUser (
     var name: String?,
 
     @field:SerializedName("avatar_url")
-    var avatar: Int?,
+    var avatar: String?,
 
     @field:SerializedName("location")
     var location: String?,

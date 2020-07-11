@@ -53,7 +53,8 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
                 user.company,
                 user.repository,
                 user.follower,
-                user.following
+                user.following,
+                user.link
             )
 
             val moveWithObjectIntent = Intent(mContext, DetailUserActivity::class.java)

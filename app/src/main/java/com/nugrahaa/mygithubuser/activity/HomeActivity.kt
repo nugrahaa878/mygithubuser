@@ -1,10 +1,13 @@
 package com.nugrahaa.mygithubuser.activity
 
+import android.app.SearchManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nugrahaa.mygithubuser.R
@@ -34,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
         rvGithubUser = rv_user
         rvGithubUser.setHasFixedSize(true)
 
-        addItemApi()
+        addItemApi("nugrahaa")
     }
 
     private fun showRecyclerList() {
@@ -43,8 +46,8 @@ class HomeActivity : AppCompatActivity() {
         rvGithubUser.adapter = listUserAdapter
     }
 
-    private fun addItemApi() {
-        val client = ApiConfig.getApiService().getListByName("nugrahaa")
+    private fun addItemApi(name: String) {
+        val client = ApiConfig.getApiService().getListByName(name)
         progressBar.visibility = View.VISIBLE
         client.enqueue(object : Callback<ResponseUser> {
             override fun onFailure(call: Call<ResponseUser>, t: Throwable) {
@@ -65,11 +68,34 @@ class HomeActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
+
+
         })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        return super.onCreateOptionsMenu(menu)
+
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchView = menu?.findItem(R.id.search)?.actionView as SearchView
+
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView.queryHint = resources.getString(R.string.search)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    progressBar.visibility = View.VISIBLE
+                    githubUsers.clear()
+                    addItemApi(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+        return true
     }
 }

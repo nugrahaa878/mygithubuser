@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.nugrahaa.mygithubuser.R
+import com.nugrahaa.mygithubuser.adapter.SectionsPagerAdapter
 import com.nugrahaa.mygithubuser.model.GithubUser
 import kotlinx.android.synthetic.main.activity_detail_user.*
 import kotlinx.android.synthetic.main.item_row_user.*
@@ -39,6 +40,12 @@ class DetailUserActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         // mengubah title app bar
         supportActionBar?.title = "About"
+
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        view_pager.adapter = sectionsPagerAdapter
+        tabs.setupWithViewPager(view_pager)
+
+        supportActionBar?.elevation = 0f
 
         prepare()
         add()

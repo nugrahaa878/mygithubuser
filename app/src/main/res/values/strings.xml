@@ -17,6 +17,7 @@
     <string name="following_title">Following</string>
     <string name="go_to_github">Go to Github</string>
     <string name="search">search</string>
+    <string name="this_is">Ini tab ke </string>
 
     <string-array name="username">
         <item>JakeWharton</item>

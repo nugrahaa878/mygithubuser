@@ -1,6 +1,7 @@
 package com.nugrahaa.mygithubuser.adapter
 
 import android.content.Context
+import android.util.Log
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -10,6 +11,10 @@ import com.nugrahaa.mygithubuser.fragment.FollowFragment
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 
+    companion object {
+        private const val TAG = "SectionsPagerAdapter"
+    }
+
     var username: String? = null
 
     @StringRes
@@ -18,7 +23,7 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
         R.string.following_title)
 
     override fun getItem(position: Int): Fragment {
-        val fragment = FollowFragment.newInstance("Ari$position")
+        val fragment = FollowFragment.newInstance(username)
         return fragment
     }
 

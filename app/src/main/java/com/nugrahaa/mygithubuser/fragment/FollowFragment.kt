@@ -1,10 +1,12 @@
 package com.nugrahaa.mygithubuser.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
 import com.nugrahaa.mygithubuser.R
 import kotlinx.android.synthetic.main.fragment_follow.*
@@ -14,10 +16,13 @@ import kotlinx.android.synthetic.main.fragment_follow.*
  */
 class FollowFragment : Fragment() {
 
+    private lateinit var rvFollowUser: RecyclerView
+
     companion object {
+        private const val TAG = "FollowFragment"
         private val ARG_USERNAME = "username"
 
-        fun newInstance(username: String): FollowFragment {
+        fun newInstance(username: String?): FollowFragment {
             val fragment = FollowFragment()
             val bundle = Bundle()
             bundle.putString(ARG_USERNAME, username)
@@ -42,6 +47,8 @@ class FollowFragment : Fragment() {
             username = arguments?.getString(ARG_USERNAME, "Ari") as String
         }
 
-        section_label.text = "${getString(R.string.this_is)} $username"
+        Log.d(TAG, "Ini adalah dari fragment dengan nama " + username)
+        rvFollowUser = rv_follow
+        rvFollowUser.setHasFixedSize(true)
     }
 }

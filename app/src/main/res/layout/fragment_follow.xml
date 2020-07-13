@@ -5,13 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".fragment.FollowFragment">
 
-    <TextView
-        android:id="@+id/section_label"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_follow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
-        android:textColor="#FFFFFF"
-        android:text="@string/hello_blank_fragment" />
+        tools:listitem="@layout/item_row_user"/>
 
 </FrameLayout>

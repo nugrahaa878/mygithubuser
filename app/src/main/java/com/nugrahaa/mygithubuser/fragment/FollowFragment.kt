@@ -8,8 +8,6 @@ import android.view.ViewGroup
 
 import com.nugrahaa.mygithubuser.R
 import kotlinx.android.synthetic.main.fragment_follow.*
-import kotlinx.android.synthetic.main.fragment_follower.*
-import kotlinx.android.synthetic.main.fragment_follower.section_label
 
 /**
  * A simple [Fragment] subclass.
@@ -17,12 +15,12 @@ import kotlinx.android.synthetic.main.fragment_follower.section_label
 class FollowFragment : Fragment() {
 
     companion object {
-        private val ARG_SECTION_NUMBER = "section_number"
+        private val ARG_USERNAME = "username"
 
-        fun newInstance(index: Int): FollowFragment {
+        fun newInstance(username: String): FollowFragment {
             val fragment = FollowFragment()
             val bundle = Bundle()
-            bundle.putInt(ARG_SECTION_NUMBER, index)
+            bundle.putString(ARG_USERNAME, username)
             fragment.arguments = bundle
             return fragment
         }
@@ -39,11 +37,11 @@ class FollowFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var index = 1
+        var username = "Ari"
         if (arguments != null) {
-            index = arguments?.getInt(ARG_SECTION_NUMBER, 0) as Int
+            username = arguments?.getString(ARG_USERNAME, "Ari") as String
         }
 
-        section_label.text = "${getString(R.string.this_is)} $index"
+        section_label.text = "${getString(R.string.this_is)} $username"
     }
 }

@@ -68,8 +68,6 @@ class HomeActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-
-
         })
     }
 

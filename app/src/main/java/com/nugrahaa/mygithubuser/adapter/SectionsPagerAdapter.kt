@@ -10,13 +10,15 @@ import com.nugrahaa.mygithubuser.fragment.FollowFragment
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 
+    var username: String? = null
+
     @StringRes
     private val TAB_TITLES = intArrayOf(
         R.string.follower_title,
         R.string.following_title)
 
     override fun getItem(position: Int): Fragment {
-        val fragment = FollowFragment.newInstance(position + 1)
+        val fragment = FollowFragment.newInstance("Ari$position")
         return fragment
     }
 

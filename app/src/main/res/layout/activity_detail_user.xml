@@ -27,6 +27,7 @@
             android:layout_marginBottom="20dp"
             android:textStyle="bold" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_username_title"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -36,6 +37,7 @@
             android:text="@string/username_title"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_username_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,6 +51,7 @@
             android:text="@string/dummy_username"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_company_title"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -58,6 +61,7 @@
             android:text="@string/company_title"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_company_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,6 +74,7 @@
             android:text="@string/dummy_company"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_location_title"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -79,6 +84,7 @@
             android:text="@string/location_title"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_location_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +97,7 @@
             android:text="@string/dummy_location"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_repository_title"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -100,6 +107,7 @@
             android:text="@string/repository_title"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_repository_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,6 +120,7 @@
             android:text="@string/dummy_repo"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_follower_title"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -121,6 +130,7 @@
             android:text="@string/follower_title"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_follower_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,6 +143,7 @@
             android:text="@string/dummy_follower"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_following_title"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -142,6 +153,7 @@
             android:text="@string/following_title"
             android:textColor="#FFFFFF" />
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_following_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -154,6 +166,7 @@
             android:text="@string/dummy_follower"
             android:textColor="#FFFFFF" />
         <Button
+            android:visibility="gone"
             android:id="@+id/btn_github"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -169,7 +182,8 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             app:tabTextColor="@android:color/white"
-            android:layout_below="@id/btn_github"/>
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/img_user_photo"/>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"

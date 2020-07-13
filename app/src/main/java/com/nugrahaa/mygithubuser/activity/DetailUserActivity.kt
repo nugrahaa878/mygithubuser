@@ -27,6 +27,7 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var tvFollower: TextView
     private lateinit var tvFollowing: TextView
     private lateinit var btnGithub: Button
+    private lateinit var sectionsPagerAdapter: SectionsPagerAdapter
 
     companion object {
         const val EXTRA_PERSON = "extra_person"
@@ -41,7 +42,7 @@ class DetailUserActivity : AppCompatActivity() {
         // mengubah title app bar
         supportActionBar?.title = "About"
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         view_pager.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager)
 
@@ -65,6 +66,8 @@ class DetailUserActivity : AppCompatActivity() {
         tvRepository.text = person.repository
         tvFollower.text = person.follower
         tvFollowing.text = person.following
+
+        sectionsPagerAdapter.username = person.username
 
         btnGithub.setOnClickListener{
             val linkGithub = person.link

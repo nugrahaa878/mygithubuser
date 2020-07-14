@@ -21,10 +21,12 @@ class FollowFragment : Fragment() {
     companion object {
         private const val TAG = "FollowFragment"
         private val ARG_USERNAME = "username"
+        private val ARG_TAB = "follow"
 
-        fun newInstance(username: String?): FollowFragment {
+        fun newInstance(username: String?, status: String?): FollowFragment {
             val fragment = FollowFragment()
             val bundle = Bundle()
+            bundle.putString(ARG_TAB, status)
             bundle.putString(ARG_USERNAME, username)
             fragment.arguments = bundle
             return fragment
@@ -43,12 +45,18 @@ class FollowFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var username = "Ari"
+        var tab = "Follow"
         if (arguments != null) {
             username = arguments?.getString(ARG_USERNAME, "Ari") as String
+            tab = arguments?.getString(ARG_TAB, "Follow") as String
         }
 
         Log.d(TAG, "Ini adalah dari fragment dengan nama " + username)
         rvFollowUser = rv_follow
         rvFollowUser.setHasFixedSize(true)
+
+        tv_tab.text = "Ini adalah tab $tab"
+
+
     }
 }

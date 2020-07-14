@@ -1,7 +1,6 @@
 package com.nugrahaa.mygithubuser.adapter
 
 import android.content.Context
-import android.util.Log
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -18,13 +17,16 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     var username: String? = null
 
     @StringRes
-    private val TAB_TITLES = intArrayOf(
-        R.string.follower_title,
-        R.string.following_title)
+    private val TAB_TITLES = arrayOf(
+        R.string.followers,
+        R.string.following)
 
     override fun getItem(position: Int): Fragment {
-        val fragment = FollowFragment.newInstance(username)
-        return fragment
+        if (position == 0) {
+            return FollowFragment.newInstance(username, "followers")
+        } else {
+            return FollowFragment.newInstance(username, "following")
+        }
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

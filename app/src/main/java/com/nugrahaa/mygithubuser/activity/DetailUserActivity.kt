@@ -4,17 +4,24 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.nugrahaa.mygithubuser.R
 import com.nugrahaa.mygithubuser.adapter.SectionsPagerAdapter
 import com.nugrahaa.mygithubuser.model.GithubUser
+import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_detail_user.*
 import kotlinx.android.synthetic.main.item_row_user.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.lang.Exception
 
 class DetailUserActivity : AppCompatActivity() {
 
@@ -30,7 +37,8 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var sectionsPagerAdapter: SectionsPagerAdapter
 
     companion object {
-        const val EXTRA_PERSON = "extra_person"
+        private const val TAG = "DetailUserActivity"
+        const val EXTRA_USERNAME = "extra_person"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,31 +57,42 @@ class DetailUserActivity : AppCompatActivity() {
         supportActionBar?.elevation = 0f
 
         prepare()
-        add()
+        val username = intent.getStringExtra(EXTRA_USERNAME)
+        addDetailUserApi(username)
+        sectionsPagerAdapter.username = username
     }
 
-    private fun add() {
-        var person = intent.getParcelableExtra(EXTRA_PERSON) as GithubUser
+    private fun addDetailUserApi(username: String?) {
+        val client = username?.let { ApiConfig.getApiService().getUserDetail(it) }
+        client?.enqueue(object : Callback<GithubUser> {
+            override fun onFailure(call: Call<GithubUser>, t: Throwable) {
+                Toast.makeText(this@DetailUserActivity, "Failed in DetailUserActivity", Toast.LENGTH_SHORT).show()
+                t.printStackTrace()
+            }
 
-        Glide.with(this)
-            .load(person.avatar)
-            .apply(RequestOptions())
-            .into(imgPhoto)
-        tvName.text = person.name
-        tvUsername.text = person.username
-        tvCompany.text = person.company
-        tvLocation.text = person.location
-        tvRepository.text = person.repository
-        tvFollower.text = person.follower
-        tvFollowing.text = person.following
+            override fun onResponse(call: Call<GithubUser>, response: Response<GithubUser>) {
+                try {
+                    val data = response.body()
+                    Log.d(TAG, "Hasil pencarian ${data?.username}")
+                    progress_bar_detail.visibility = View.VISIBLE
 
-        sectionsPagerAdapter.username = person.username
+                    Glide.with(this@DetailUserActivity)
+                        .load(data?.avatar)
+                        .apply(RequestOptions())
+                        .into(imgPhoto)
+                    tvName.text = data?.name
+                    tvUsername.text = data?.username
+                    tvCompany.text = data?.company
+                    tvLocation.text = data?.location
+                    tvRepository.text = data?.repository
 
-        btnGithub.setOnClickListener{
-            val linkGithub = person.link
-            val githubIntent = Intent(Intent.ACTION_VIEW, Uri.parse(linkGithub))
-            startActivity(githubIntent)
-        }
+                    progress_bar_detail.visibility = View.INVISIBLE
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+        })
     }
 
     private fun prepare() {
@@ -83,8 +102,5 @@ class DetailUserActivity : AppCompatActivity() {
         tvCompany = tv_company_detail
         tvLocation = tv_location_detail
         tvRepository = tv_repository_detail
-        tvFollower = tv_follower_detail
-        tvFollowing = tv_following_detail
-        btnGithub = btn_github
     }
 }

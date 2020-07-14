@@ -58,7 +58,7 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
             )
 
             val moveWithObjectIntent = Intent(mContext, DetailUserActivity::class.java)
-            moveWithObjectIntent.putExtra(DetailUserActivity.EXTRA_PERSON, person)
+            moveWithObjectIntent.putExtra(DetailUserActivity.EXTRA_USERNAME, person.username)
             mContext.startActivity(moveWithObjectIntent)
         }
     }

@@ -85,11 +85,11 @@ class DetailUserActivity : AppCompatActivity() {
                         .load(data?.avatar)
                         .apply(RequestOptions())
                         .into(imgPhoto)
-                    tvName.text = data?.name
-                    tvUsername.text = data?.username
-                    tvCompany.text = data?.company
-                    tvLocation.text = data?.location
-                    tvRepository.text = data?.repository
+                    tvName.text = if (data?.name != null) data.name else "-"
+                    tvUsername.text = if (data?.username != null) data.username else "-"
+                    tvCompany.text = if (data?.company != null) data.company else "-"
+                    tvLocation.text = if (data?.location != null) data.location else "-"
+                    tvRepository.text = if (data?.repository != null) data.repository else "-"
 
                     progress_bar_detail.visibility = View.INVISIBLE
                 } catch (e: Exception) {

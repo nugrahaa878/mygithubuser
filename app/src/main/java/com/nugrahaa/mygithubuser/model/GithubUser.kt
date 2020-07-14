@@ -31,6 +31,9 @@ data class GithubUser (
     var following: String?,
 
     @field:SerializedName("html_url")
-    var link: String?
+    var link: String?,
+
+    @field:SerializedName("id")
+    var id: Int?
 
 ): Parcelable

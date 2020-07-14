@@ -17,6 +17,7 @@ import com.nugrahaa.mygithubuser.adapter.SectionsPagerAdapter
 import com.nugrahaa.mygithubuser.model.GithubUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_detail_user.*
+import kotlinx.android.synthetic.main.fragment_follow.*
 import kotlinx.android.synthetic.main.item_row_user.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,7 +64,11 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun addDetailUserApi(username: String?) {
-        val client = username?.let { ApiConfig.getApiService().getUserDetail(it) }
+        val client = username?.let {
+            ApiConfig.getApiService().getUserDetail("token 3665e72584dd61f52b327a2eede7e07ee188fefa",
+                it
+            )
+        }
         client?.enqueue(object : Callback<GithubUser> {
             override fun onFailure(call: Call<GithubUser>, t: Throwable) {
                 Toast.makeText(this@DetailUserActivity, "Failed in DetailUserActivity", Toast.LENGTH_SHORT).show()

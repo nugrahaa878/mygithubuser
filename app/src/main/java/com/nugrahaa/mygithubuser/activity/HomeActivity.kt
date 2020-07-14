@@ -16,10 +16,12 @@ import com.nugrahaa.mygithubuser.model.GithubUser
 import com.nugrahaa.mygithubuser.model.ResponseUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_follow.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.lang.Exception
+import kotlin.error
 
 class HomeActivity : AppCompatActivity() {
 
@@ -37,7 +39,7 @@ class HomeActivity : AppCompatActivity() {
         rvGithubUser = rv_user
         rvGithubUser.setHasFixedSize(true)
 
-        addItemApi("nugrahaa")
+        addItemApi("james")
     }
 
     private fun showRecyclerList() {
@@ -46,9 +48,8 @@ class HomeActivity : AppCompatActivity() {
         rvGithubUser.adapter = listUserAdapter
     }
 
-    private fun addItemApi(name: String) {
-        val client = ApiConfig.getApiService().getListByName(name)
-        progressBar.visibility = View.VISIBLE
+    private fun addItemApi(name: String?) {
+        val client = ApiConfig.getApiService().getListByName("token 3665e72584dd61f52b327a2eede7e07ee188fefa", name)
         client.enqueue(object : Callback<ResponseUser> {
             override fun onFailure(call: Call<ResponseUser>, t: Throwable) {
                 Toast.makeText(this@HomeActivity, "Gagal gan " + t.message, Toast.LENGTH_SHORT).show()

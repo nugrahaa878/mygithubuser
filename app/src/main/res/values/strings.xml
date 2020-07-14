@@ -20,6 +20,7 @@
     <string name="this_is">Ini tab ke </string>
     <string name="followers">followers</string>
     <string name="following">following</string>
+    <string name="empty">Empty</string>
 
     <string-array name="username">
         <item>JakeWharton</item>

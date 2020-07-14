@@ -90,6 +90,8 @@ class DetailUserActivity : AppCompatActivity() {
                     tvCompany.text = if (data?.company != null) data.company else "-"
                     tvLocation.text = if (data?.location != null) data.location else "-"
                     tvRepository.text = if (data?.repository != null) data.repository else "-"
+                    tvFollower.text = if (data?.follower != null) data.follower else "-"
+                    tvFollowing.text = if (data?.following != null) data.following else "-"
 
                     progress_bar_detail.visibility = View.INVISIBLE
                 } catch (e: Exception) {
@@ -107,5 +109,7 @@ class DetailUserActivity : AppCompatActivity() {
         tvCompany = tv_company_detail
         tvLocation = tv_location_detail
         tvRepository = tv_repository_detail
+        tvFollower = tv_follower
+        tvFollowing = tv_following
     }
 }

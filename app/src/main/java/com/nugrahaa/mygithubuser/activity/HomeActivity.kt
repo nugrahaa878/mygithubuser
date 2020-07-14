@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private lateinit var rvGithubUser: RecyclerView
+    private lateinit var listUserAdapter: ListUserAdapter
     private var githubUsers = arrayListOf<GithubUser>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +45,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showRecyclerList() {
         rvGithubUser.layoutManager = LinearLayoutManager(this)
-        val listUserAdapter = ListUserAdapter(githubUsers)
+        listUserAdapter = ListUserAdapter(githubUsers)
         rvGithubUser.adapter = listUserAdapter
     }
 
@@ -62,6 +63,7 @@ class HomeActivity : AppCompatActivity() {
                     for (data in dataArray) {
                         githubUsers.add(data)
                     }
+                    rv_user.visibility = View.VISIBLE
                     progressBar.visibility = View.INVISIBLE
                     showRecyclerList()
                 } catch (e: Exception) {
@@ -83,6 +85,7 @@ class HomeActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {
+                    rv_user.visibility = View.INVISIBLE
                     progressBar.visibility = View.VISIBLE
                     githubUsers.clear()
                     addItemApi(query)

@@ -140,7 +140,9 @@
     </string-array>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="total_repository">Total Repository :</string>
+    <string name="total_repository">Repository :</string>
     <string name="id">User ID&#160;&#160;&#160;&#160;&#160;&#160;&#160;:</string>
+    <string name="follower">Follower :</string>
+    <string name="following_detail"> Following :</string>
 
 </resources>

@@ -31,6 +31,10 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
         return listUser.size
     }
 
+    fun clearData() {
+        listUser.clear()
+    }
+
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val user = listUser[position]
 

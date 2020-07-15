@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about_me">À propos</string>
-    <string name="repository_title">Dépôt</string>
-    <string name="follower_title">Disciple</string>
-    <string name="following_title">Suivant</string>
-    <string name="go_to_github">Aller à Github</string>
     <string name="search">chercher</string>
     <string name="followers">Disciple</string>
     <string name="following">Suivant</string>

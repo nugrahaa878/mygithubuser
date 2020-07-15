@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -19,12 +20,10 @@ import com.nugrahaa.mygithubuser.model.GithubUser
 import com.nugrahaa.mygithubuser.model.ResponseUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_follow.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.lang.Exception
-import kotlin.error
 
 class HomeActivity : AppCompatActivity() {
 
@@ -71,6 +70,7 @@ class HomeActivity : AppCompatActivity() {
                     showRecyclerList()
                 } catch (e: Exception) {
                     Toast.makeText(this@HomeActivity, e.message, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, e.message)
                     e.printStackTrace()
                 }
             }

@@ -1,12 +1,9 @@
 package com.nugrahaa.mygithubuser.activity
 
-import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -17,8 +14,6 @@ import com.nugrahaa.mygithubuser.adapter.SectionsPagerAdapter
 import com.nugrahaa.mygithubuser.model.GithubUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_detail_user.*
-import kotlinx.android.synthetic.main.fragment_follow.*
-import kotlinx.android.synthetic.main.item_row_user.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,7 +29,6 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var tvRepository: TextView
     private lateinit var tvFollower: TextView
     private lateinit var tvFollowing: TextView
-    private lateinit var btnGithub: Button
     private lateinit var sectionsPagerAdapter: SectionsPagerAdapter
 
     companion object {

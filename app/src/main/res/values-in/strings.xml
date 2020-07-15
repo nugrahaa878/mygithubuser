@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about_me">Tentang</string>
-    <string name="repository_title">Repositori</string>
-    <string name="follower_title">Pengikut</string>
-    <string name="following_title">Mengikuti</string>
-    <string name="go_to_github">Ke Github</string>
     <string name="search">cari</string>
     <string name="followers">Pengikut</string>
     <string name="following">Mengikuti</string>

@@ -30,8 +30,8 @@ class FollowFragment : Fragment() {
 
     companion object {
         private const val TAG = "FollowFragment"
-        private val ARG_USERNAME = "username"
-        private val ARG_TAB = "follow"
+        private const val ARG_USERNAME = "username"
+        private const val ARG_TAB = "follow"
 
         fun newInstance(username: String?, status: String?): FollowFragment {
             val fragment = FollowFragment()
@@ -61,7 +61,7 @@ class FollowFragment : Fragment() {
             tab = arguments?.getString(ARG_TAB, "Follow") as String
         }
 
-        Log.d(TAG, "Ini adalah dari fragment dengan nama " + username)
+        Log.d(TAG, "Ini adalah dari fragment dengan nama $username")
         rvFollowUser = rv_follow
         rvFollowUser.setHasFixedSize(true)
 
@@ -94,7 +94,6 @@ class FollowFragment : Fragment() {
                     }
                     error.visibility = View.INVISIBLE
                     showRecyclerList()
-                    Log.d(TAG, "Follower pertama : " + dataArray.get(0).toString())
                     progress_follow.visibility = View.INVISIBLE
 
                 } catch (e: Exception) {

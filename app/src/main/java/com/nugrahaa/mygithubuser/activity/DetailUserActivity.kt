@@ -95,6 +95,7 @@ class DetailUserActivity : AppCompatActivity() {
 
                     progress_bar_detail.visibility = View.INVISIBLE
                 } catch (e: Exception) {
+                    Toast.makeText(this@DetailUserActivity, e.message, Toast.LENGTH_SHORT).show()
                     e.printStackTrace()
                 }
             }

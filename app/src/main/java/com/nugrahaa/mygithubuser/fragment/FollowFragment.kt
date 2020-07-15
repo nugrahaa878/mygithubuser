@@ -100,6 +100,7 @@ class FollowFragment : Fragment() {
                 } catch (e: Exception) {
                     error.visibility = View.VISIBLE
                     progress_follow.visibility = View.INVISIBLE
+                    Toast.makeText(activity, e.message, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, "Masuk ke exception " + e.message)
                     e.printStackTrace()
                 }

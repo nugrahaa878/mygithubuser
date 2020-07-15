@@ -49,7 +49,7 @@ class DetailUserActivity : AppCompatActivity() {
         // memunculkan tombol panah back
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         // mengubah title app bar
-        supportActionBar?.title = "About"
+        supportActionBar?.title = resources.getString(R.string.about_me)
 
         sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         view_pager.adapter = sectionsPagerAdapter

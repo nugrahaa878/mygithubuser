@@ -1,23 +1,22 @@
 <resources>
-    <string name="app_name">MyGithubUser</string>
-    <string name="dummy_name">Ari Angga Nugraha</string>
-    <string name="dummy_username">nugrahaa878</string>
-    <string name="dummy_location">Depok, Indonesia</string>
-    <string name="about_me">About Me</string>
-    <string name="username">Username :</string>
-    <string name="location">Location&#160;&#160;&#160;&#160;:</string>
-    <string name="dummy_company">Universitas Indonesia</string>
-    <string name="dummy_repo">23</string>
-    <string name="dummy_follower">123</string>
-    <string name="username_title">Username</string>
-    <string name="company_title">Company</string>
-    <string name="location_title">Location</string>
+    <string name="app_name" translatable="false">MyGithubUser</string>
+    <string name="dummy_name" translatable="false">Ari Angga Nugraha</string>
+    <string name="dummy_username" translatable="false">nugrahaa878</string>
+    <string name="dummy_location" translatable="false">Depok, Indonesia</string>
+    <string name="about_me">About</string>
+    <string name="username" translatable="false">Username :</string>
+    <string name="dummy_company" translatable="false">Universitas Indonesia</string>
+    <string name="dummy_repo" translatable="false">23</string>
+    <string name="dummy_follower" translatable="false">123</string>
+    <string name="username_title" translatable="false">Username</string>
+    <string name="company_title" translatable="false">Company</string>
+    <string name="location_title" translatable="false">Location</string>
     <string name="repository_title">Repository</string>
     <string name="follower_title">Follower</string>
     <string name="following_title">Following</string>
     <string name="go_to_github">Go to Github</string>
     <string name="search">search</string>
-    <string name="this_is">Ini tab ke </string>
+    <string name="this_is" translatable="false">Ini tab ke </string>
     <string name="followers">followers</string>
     <string name="following">following</string>
     <string name="empty">Empty</string>
@@ -139,10 +138,10 @@
         <item>https://github.com/sidiqpermana</item>
     </string-array>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="total_repository">Repository :</string>
-    <string name="id">User ID&#160;&#160;&#160;&#160;&#160;&#160;&#160;:</string>
+    <string name="id" translatable="false">User ID&#160;&#160;&#160;&#160;&#160;&#160;&#160;:</string>
     <string name="follower">Follower :</string>
     <string name="following_detail"> Following :</string>
+    <string name="change_language_settings">Change Language</string>
 
 </resources>

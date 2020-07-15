@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_me">Acerca de</string>
+    <string name="repository_title">Repositorio</string>
+    <string name="follower_title">Seguidor</string>
+    <string name="following_title">Siguiendo</string>
+    <string name="go_to_github">Ir Github</string>
+    <string name="search">buscar</string>
+    <string name="followers">Seguidor</string>
+    <string name="following">Siguiendo</string>
+    <string name="empty">Vacía</string>
+    <string name="total_repository">Repositorio :</string>
+    <string name="follower">Seguidor :</string>
+    <string name="following_detail"> Seguiendo :</string>
+    <string name="change_language_settings">Cambiar idioma</string>
+</resources>

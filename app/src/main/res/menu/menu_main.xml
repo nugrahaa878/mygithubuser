@@ -21,4 +21,9 @@
         android:title="@string/change_language_settings"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/favorite"
+        android:title="@string/favorite"
+        app:showAsAction="never" />
+
 </menu>

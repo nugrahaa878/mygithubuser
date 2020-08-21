@@ -108,6 +108,9 @@ class HomeActivity : AppCompatActivity() {
         if (item.itemId == R.id.action_change_settings) {
             val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
             startActivity(mIntent)
+        } else if (item.itemId == R.id.favorite) {
+            val mIntent = Intent(this@HomeActivity, FavoriteUserActivity::class.java)
+            startActivity(mIntent)
         }
         return super.onOptionsItemSelected(item)
     }

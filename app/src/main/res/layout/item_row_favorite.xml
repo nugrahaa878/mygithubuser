@@ -31,7 +31,7 @@
             tools:text="Ari Angga Nugraha"/>
 
         <TextView
-            android:id="@+id/t_favorite_location"
+            android:id="@+id/tv_favorite_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

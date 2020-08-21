@@ -33,7 +33,7 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
             .apply(RequestOptions().override(75, 75))
             .into(holder.imgPhoto)
 
-        holder.tvLocation.text = user.id.toString()
+        holder.tvLocation.text = user.idUser.toString()
         holder.tvName.text = user.username
         holder.tvUsername.text = user.username
 
@@ -49,7 +49,7 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
                 user.follower,
                 user.following,
                 user.link,
-                user.id
+                user.idUser
             )
 
             val moveWithObjectIntent = Intent(mContext, DetailUserActivity::class.java)

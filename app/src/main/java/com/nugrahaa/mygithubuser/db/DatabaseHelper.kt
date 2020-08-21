@@ -19,7 +19,13 @@ internal class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATAB
                 " ${UserColumns.USERNAME} TEXT," +
                 " ${UserColumns.NAME} TEXT," +
                 " ${UserColumns.AVATAR} TEXT," +
-                " ${UserColumns.LOCATION} TEXT)"
+                " ${UserColumns.LOCATION} TEXT," +
+                " ${UserColumns.COMPANY} TEXT," +
+                " ${UserColumns.REPOSITORY} TEXT," +
+                " ${UserColumns.FOLLOWER} TEXT," +
+                " ${UserColumns.FOLLOWING} TEXT," +
+                " ${UserColumns.LINK} TEXT," +
+                " ${UserColumns.ID} TEXT)"
 
     }
 

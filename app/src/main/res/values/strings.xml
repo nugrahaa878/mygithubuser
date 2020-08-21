@@ -17,5 +17,6 @@
     <string name="following_detail"> Following :</string>
     <string name="change_language_settings">Change Language</string>
     <string name="user_profile" translatable="false">user-profile</string>
+    <string name="favorite">Favorite</string>
 
 </resources>

@@ -33,7 +33,7 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
             .apply(RequestOptions().override(75, 75))
             .into(holder.imgPhoto)
 
-        holder.tvLocation.text = user.idUser.toString()
+        holder.tvUserId.text = user.idUser.toString()
         holder.tvName.text = user.username
         holder.tvUsername.text = user.username
 
@@ -58,10 +58,10 @@ class ListUserAdapter(private val listUser: ArrayList<GithubUser>) : RecyclerVie
         }
     }
 
-    inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.tv_name
         var tvUsername: TextView = itemView.tv_username
-        var tvLocation: TextView = itemView.tv_location
+        var tvUserId: TextView = itemView.tv_userid
         var imgPhoto: ImageView = itemView.img_item_photo
     }
 }

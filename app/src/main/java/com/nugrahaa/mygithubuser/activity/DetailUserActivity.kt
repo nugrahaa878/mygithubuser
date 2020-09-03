@@ -93,6 +93,7 @@ class DetailUserActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
+
         })
     }
 

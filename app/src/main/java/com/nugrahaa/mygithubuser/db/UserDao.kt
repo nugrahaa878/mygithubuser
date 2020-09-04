@@ -1,5 +1,6 @@
 package com.nugrahaa.mygithubuser.db
 
+import android.database.Cursor
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.nugrahaa.mygithubuser.model.GithubUser
@@ -21,4 +22,8 @@ interface UserDao {
 
     @Query("DELETE FROM user_table WHERE username = :username")
     suspend fun deleteByUserName(username: String)
+
+    // Cursor
+    @Query("SELECT * FROM user_table")
+    fun cursorgetAll(): Cursor
 }

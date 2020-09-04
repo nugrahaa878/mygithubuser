@@ -4,6 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.nugrahaa.mygithubuser.provider.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.nugrahaa.mygithubuser.provider.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +18,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name=".provider.MyContentProvider"
+            android:authorities="com.nugrahaa.mygithubuser"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.nugrahaa.mygithubuser.READ_DATABASE"
+            android:writePermission="com.nugrahaa.mygithubuser.WRITE_DATABASE" />
+
         <receiver
             android:name=".services.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.FavoriteUserActivity" />

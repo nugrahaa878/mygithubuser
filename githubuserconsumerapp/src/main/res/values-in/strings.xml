@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_me">Tentang</string>
+    <string name="search">cari</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="empty">Kosong</string>
+    <string name="total_repository">Repositori :</string>
+    <string name="follower">Pengikut :</string>
+    <string name="following_detail"> Mengikuti :</string>
+    <string name="change_language_settings">Ubah bahasa</string>
+</resources>

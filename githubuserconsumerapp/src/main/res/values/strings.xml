@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">MyGithubUser</string>
+    <string name="dummy_name" translatable="false">Ari Angga Nugraha</string>
+    <string name="dummy_username" translatable="false">nugrahaa878</string>
+    <string name="dummy_location" translatable="false">Depok, Indonesia</string>
+    <string name="about_me">About</string>
+    <string name="username" translatable="false">Username :</string>
+    <string name="dummy_company" translatable="false">Universitas Indonesia</string>
+    <string name="dummy_repo" translatable="false">23</string>
+    <string name="search">search</string>
+    <string name="followers">followers</string>
+    <string name="following">following</string>
+    <string name="empty">Empty</string>
+    <string name="total_repository">Repository :</string>
+    <string name="id" translatable="false">User ID&#160;&#160;&#160;&#160;&#160;&#160;&#160;:</string>
+    <string name="follower">Follower :</string>
+    <string name="following_detail"> Following :</string>
+    <string name="change_language_settings">Change Language</string>
+    <string name="user_profile" translatable="false">user-profile</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="setting">Setting</string>
+
+</resources>

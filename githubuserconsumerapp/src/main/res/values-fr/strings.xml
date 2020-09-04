@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_me">À propos</string>
+    <string name="search">chercher</string>
+    <string name="followers">Disciple</string>
+    <string name="following">Suivant</string>
+    <string name="empty">Vide</string>
+    <string name="total_repository">Dépôt :</string>
+    <string name="follower">Disciple :</string>
+    <string name="following_detail"> Suivant :</string>
+    <string name="change_language_settings">Changer de langue</string>
+</resources>

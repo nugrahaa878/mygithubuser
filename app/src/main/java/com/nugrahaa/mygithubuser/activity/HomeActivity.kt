@@ -116,10 +116,8 @@ class HomeActivity : AppCompatActivity() {
         }
 
         if (item.itemId == R.id.favorite) {
-            mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-            mUserViewModel.readAllData.observe(this, Observer { user ->
-                println("User favorite : $user")
-            })
+            val mIntent = Intent(this, FavoriteUserActivity::class.java)
+            startActivity(mIntent)
         }
 
         return super.onOptionsItemSelected(item)

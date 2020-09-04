@@ -120,6 +120,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(mIntent)
         }
 
+        if (item.itemId == R.id.setting) {
+            val mIntent = Intent(this, SettingActivity::class.java)
+            startActivity(mIntent)
+        }
+
         return super.onOptionsItemSelected(item)
     }
 }

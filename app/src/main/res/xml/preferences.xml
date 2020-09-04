@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Reminder" >
+
+        <SwitchPreferenceCompat
+            app:icon="@drawable/ic_baseline_notifications_24"
+            android:key="Reminder"
+            android:title="Reminder at 9.00 AM" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

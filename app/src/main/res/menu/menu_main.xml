@@ -26,4 +26,10 @@
         android:title="@string/favorite"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/setting"
+        android:title="@string/setting"
+        app:showAsAction="never" />
+
+
 </menu>

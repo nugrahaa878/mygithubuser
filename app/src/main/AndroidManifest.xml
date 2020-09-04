@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.FavoriteUserActivity"></activity>
+        <receiver
+            android:name=".services.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.FavoriteUserActivity" />
         <activity android:name=".activity.HomeActivity" />
         <activity
             android:name=".activity.DetailUserActivity"

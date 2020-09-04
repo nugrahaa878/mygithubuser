@@ -12,10 +12,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nugrahaa.mygithubuser.R
 import com.nugrahaa.mygithubuser.adapter.ListUserAdapter
+import com.nugrahaa.mygithubuser.db.UserViewModel
 import com.nugrahaa.mygithubuser.model.GithubUser
 import com.nugrahaa.mygithubuser.model.ResponseUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
@@ -26,6 +29,8 @@ import retrofit2.Response
 import java.lang.Exception
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var mUserViewModel: UserViewModel
 
     companion object {
         private const val TAG = "MainActivity"
@@ -109,6 +114,14 @@ class HomeActivity : AppCompatActivity() {
             val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
             startActivity(mIntent)
         }
+
+        if (item.itemId == R.id.favorite) {
+            mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+            mUserViewModel.readAllData.observe(this, Observer { user ->
+                println("User favorite : $user")
+            })
+        }
+
         return super.onOptionsItemSelected(item)
     }
 }

@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey
 data class User (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val username: String,
-    val name: String,
-    val avatar: String,
-    val location: String,
-    val company: String,
-    val repository: String,
-    val follower: String,
-    val following: String,
-    val link: String,
-    val idUser: Int
+    val username: String?,
+    val name: String?,
+    val avatar: String?,
+    val location: String?,
+    val company: String?,
+    val repository: String?,
+    val follower: String?,
+    val following: String?,
+    val link: String?,
+    val idUser: Int?
 )

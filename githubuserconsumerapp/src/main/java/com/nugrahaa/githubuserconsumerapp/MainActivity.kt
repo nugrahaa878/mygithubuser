@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var rvGithubUser: RecyclerView
-    private lateinit var listUserAdapter: ListUserAdapter
-    private var githubUsers = arrayListOf<GithubUser>()
+    private lateinit var listUserAdapter: FavoriteUserAdapter
+    private var githubUsers = arrayListOf<User>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun showRecyclerList() {
         rvGithubUser.layoutManager = LinearLayoutManager(this)
-        listUserAdapter = ListUserAdapter(githubUsers)
+        listUserAdapter = FavoriteUserAdapter()
+        listUserAdapter.setData(githubUsers)
         rvGithubUser.adapter = listUserAdapter
     }
 

@@ -13,7 +13,7 @@ class MyContentProvider : ContentProvider() {
 
     companion object {
         private const val USER = 1
-        private const val AUTHORITY = "com.nugrahaa.mygithubuser.provider"
+        private const val AUTHORITY = "com.nugrahaa.mygithubuser"
         private val sUriMatcher = UriMatcher(UriMatcher.NO_MATCH).apply {
             addURI(AUTHORITY, "user_table", USER)
         }

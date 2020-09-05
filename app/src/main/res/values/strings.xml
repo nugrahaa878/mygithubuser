@@ -17,9 +17,7 @@
     <string name="following_detail"> Following :</string>
     <string name="change_language_settings">Change Language</string>
     <string name="user_profile" translatable="false">user-profile</string>
-    <string name="favorite">Favorite</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="setting">Setting</string>
+    <string name="favorite" translatable="false">Favorite</string>
+    <string name="setting" translatable="false">Setting</string>
 
 </resources>

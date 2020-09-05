@@ -1,6 +1,5 @@
 package com.nugrahaa.githubuserconsumerapp
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.nugrahaa.githubuserconsumerapp.R
 import kotlinx.android.synthetic.main.item_row_user.view.*
 
 class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ListViewHolder>() {
@@ -36,7 +34,6 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ListViewHold
         holder.tvName.text = user.username
         holder.tvUsername.text = user.username
 
-        val mContext = holder.itemView.context
     }
 
     override fun getItemCount(): Int {

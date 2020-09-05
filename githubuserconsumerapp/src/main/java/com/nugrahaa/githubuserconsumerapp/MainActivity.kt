@@ -1,32 +1,17 @@
 package com.nugrahaa.githubuserconsumerapp
 
-import android.app.SearchManager
-import android.content.Context
-import android.content.Intent
+import android.annotation.SuppressLint
+import android.database.Cursor
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
-
-
-    companion object {
-        private const val TAG = "MainActivity"
-    }
 
     private lateinit var rvGithubUser: RecyclerView
     private lateinit var listUserAdapter: FavoriteUserAdapter
@@ -42,13 +27,14 @@ class MainActivity : AppCompatActivity() {
         addItem()
     }
 
-    private fun showRecyclerList() {
+    private fun showRecyclerList(listUser: ArrayList<User>) {
         rvGithubUser.layoutManager = LinearLayoutManager(this)
         listUserAdapter = FavoriteUserAdapter()
-        listUserAdapter.setData(githubUsers)
+        listUserAdapter.setData(listUser)
         rvGithubUser.adapter = listUserAdapter
     }
 
+    @SuppressLint("Recycle")
     private fun addItem() {
 
         val table = "user_table"
@@ -69,6 +55,32 @@ class MainActivity : AppCompatActivity() {
             null
         )
 
-        Toast.makeText(this, cursor.toString(), Toast.LENGTH_LONG).show()
+        showRecyclerList(convertCursor(cursor))
+
+    }
+
+    private fun convertCursor(cursor: Cursor?): ArrayList<User> {
+        val favUsers = ArrayList<User>()
+
+        cursor?.apply {
+            while (moveToNext()) {
+                val name = getString(getColumnIndexOrThrow("name"))
+                val id = getInt(getColumnIndexOrThrow("id"))
+                val username = getString(getColumnIndexOrThrow("username"))
+                val location = getString(getColumnIndexOrThrow("location"))
+                val company = getString(getColumnIndexOrThrow("company"))
+                val followers = getString(getColumnIndexOrThrow("follower"))
+                val following = getString(getColumnIndexOrThrow("following"))
+                val repositories = getString(getColumnIndexOrThrow("repository"))
+                val avatar = getString(getColumnIndexOrThrow("avatar"))
+                val link = getString(getColumnIndexOrThrow("link"))
+                val idUser = getInt(getColumnIndexOrThrow("idUser"))
+                favUsers.add(User(id, username, name, avatar, location, company, repositories, followers, following, link, idUser))
+            }
+        }
+
+        Log.d("CONVET_CURSOR", favUsers.toString())
+
+        return favUsers
     }
 }

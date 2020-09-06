@@ -70,9 +70,13 @@ class DetailUserActivity : AppCompatActivity() {
 
         // Favorite logic
         floating_favorite.setOnClickListener {
-            checkLiked()
-            insertDataToDatabase()
-            println("favorite status $isFav")
+            try {
+                checkLiked()
+                insertDataToDatabase()
+            } catch (e: Exception) {
+                Toast.makeText(this, "Harap tunggu loading data terlebih dahulu", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
     }

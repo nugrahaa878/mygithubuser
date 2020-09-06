@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashActivity"></activity>
+        <activity android:name=".activity.SplashActivity" />
 
         <provider
             android:name=".provider.MyContentProvider"
@@ -34,8 +34,10 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.FavoriteUserActivity" />
+        <activity android:name=".activity.SettingActivity"
+            android:parentActivityName=".activity.HomeActivity"/>
+        <activity android:name=".activity.FavoriteUserActivity"
+            android:parentActivityName=".activity.HomeActivity"/>
         <activity android:name=".activity.HomeActivity" />
         <activity
             android:name=".activity.DetailUserActivity"

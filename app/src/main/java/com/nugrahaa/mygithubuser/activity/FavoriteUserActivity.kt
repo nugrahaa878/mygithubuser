@@ -21,6 +21,9 @@ class FavoriteUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorite_user2)
 
+        supportActionBar?.title = "Favorite User"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val adapter = FavoriteUserAdapter()
         rvFavoriteUser = rv_favorite_user
         rvFavoriteUser.adapter = adapter

@@ -10,6 +10,9 @@ class SettingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
 
+        supportActionBar?.title = "Setting"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         supportFragmentManager.beginTransaction().add(R.id.setting_holder, PreferenceFragment()).commit()
     }
 }

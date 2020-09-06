@@ -25,14 +25,14 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ListViewHold
     override fun onBindViewHolder(holder: FavoriteUserAdapter.ListViewHolder, position: Int) {
         val user = listUser[position]
 
-        Glide.with(holder.itemView.context)
-            .load(user.avatar)
-            .apply(RequestOptions().override(75, 75))
-            .into(holder.imgPhoto)
-
         holder.tvUserId.text = user.idUser.toString()
         holder.tvName.text = user.username
         holder.tvUsername.text = user.username
+
+        Glide.with(holder.itemView.context)
+            .load("https://avatars0.githubusercontent.com/u/425?v=4")
+            .apply(RequestOptions().override(75, 75))
+            .into(holder.imgPhoto)
 
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.nugrahaa.mygithubuser.activity.HomeActivity
+import com.nugrahaa.mygithubuser.activity.SplashActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val homeIntent = Intent(this@MainActivity, HomeActivity::class.java)
-        startActivity(homeIntent)
+        val splashIntent = Intent(this@MainActivity, SplashActivity::class.java)
+        startActivity(splashIntent)
     }
 
 }

@@ -22,7 +22,7 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ListViewHold
         return ListViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: FavoriteUserAdapter.ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val user = listUser[position]
 
         holder.tvUserId.text = user.idUser.toString()

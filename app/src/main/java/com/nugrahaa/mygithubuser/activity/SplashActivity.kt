@@ -11,6 +11,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        supportActionBar?.hide()
+
         val time = 2500
         val homeIntent = Intent(this@SplashActivity, HomeActivity::class.java)
         Handler().postDelayed({

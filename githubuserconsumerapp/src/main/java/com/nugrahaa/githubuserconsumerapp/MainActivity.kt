@@ -6,7 +6,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home.*
@@ -15,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var rvGithubUser: RecyclerView
     private lateinit var listUserAdapter: FavoriteUserAdapter
-    private var githubUsers = arrayListOf<User>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -16,7 +16,7 @@ import com.nugrahaa.mygithubuser.R
 import com.nugrahaa.mygithubuser.adapter.SectionsPagerAdapter
 import com.nugrahaa.mygithubuser.db.User
 import com.nugrahaa.mygithubuser.db.UserDatabase
-import com.nugrahaa.mygithubuser.db.UserViewModel
+import com.nugrahaa.mygithubuser.viewmodel.UserViewModel
 import com.nugrahaa.mygithubuser.model.GithubUser
 import com.nugrahaa.mygithubuser.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_detail_user.*

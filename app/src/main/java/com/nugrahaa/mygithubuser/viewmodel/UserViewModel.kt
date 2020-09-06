@@ -1,9 +1,12 @@
-package com.nugrahaa.mygithubuser.db
+package com.nugrahaa.mygithubuser.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.nugrahaa.mygithubuser.db.User
+import com.nugrahaa.mygithubuser.db.UserDatabase
+import com.nugrahaa.mygithubuser.db.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

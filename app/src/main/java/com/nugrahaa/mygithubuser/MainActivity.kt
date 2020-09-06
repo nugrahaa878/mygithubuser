@@ -3,7 +3,6 @@ package com.nugrahaa.mygithubuser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.nugrahaa.mygithubuser.activity.HomeActivity
 import com.nugrahaa.mygithubuser.activity.SplashActivity
 
 class MainActivity : AppCompatActivity() {

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nugrahaa.mygithubuser.R
 import com.nugrahaa.mygithubuser.adapter.FavoriteUserAdapter
-import com.nugrahaa.mygithubuser.db.UserViewModel
+import com.nugrahaa.mygithubuser.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.activity_favorite_user2.*
 
 class FavoriteUserActivity : AppCompatActivity() {

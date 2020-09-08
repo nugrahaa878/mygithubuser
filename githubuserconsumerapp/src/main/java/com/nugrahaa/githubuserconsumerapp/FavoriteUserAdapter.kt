@@ -29,6 +29,11 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ListViewHold
         holder.tvName.text = user.username
         holder.tvUsername.text = user.username
 
+        Glide.with(holder.itemView.context)
+            .load(user.avatar)
+            .apply(RequestOptions().override(75, 75))
+            .into(holder.imgPhoto)
+
     }
 
     override fun getItemCount(): Int {

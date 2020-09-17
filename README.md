@@ -3,6 +3,8 @@
 
 Submission for Dicoding Class Belajar Fundamental Aplikasi Android with Android Studio and Kotlin
 
+![alt text](https://i.ibb.co/mbZ4dfN/splash-removebg-preview.png)
+
 ## Installation
 Clone this repository and import into Android Studio
 ```
